@@ -25,15 +25,16 @@ int System::get_key(int key)
             break;
         }
     }
-    stats.add_operation(operationReadCost, operationWriteCost);
     if (!found)
     {
         // element needs to be read from memory and put into cache
         // let the read value be value
-        int value = 0; // assume this is read from memory
+        value = 0; // assume this is somehow read from memory
         operationReadCost += MEMORY_READ_LATENCY;
         set_key(key, value, 0);
     }
+    stats.add_operation(operationReadCost, operationWriteCost);
+
     return value;
 }
 void System::set_key(int key, int value, int level = 0)

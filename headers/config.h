@@ -2,7 +2,7 @@
 
 static const int OPERATIONS = 50000;
 
-static const int KEY_RANGE = 100000;
+static const int KEY_RANGE = 10000;
 static const int VALUE_RANGE = 1000000;
 
 static const int STATS_PRINT_FREQ = 100;
